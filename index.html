@@ -3,774 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Iron & Embers Food Truck — Mining-heritage smoked BBQ rolling through Southeast Kansas. Find us, order ahead, and book catering." />
-  <meta property="og:title" content="Iron & Embers Food Truck | Southeast Kansas" />
+  <meta name="description" content="Iron & Embers Food Truck — Homemade breads, breakfast, and lunch rolling through Southeast Kansas. Find us, order ahead, and book catering." />
+  <meta property="og:title" content="Iron & Embers | Southeast Kansas" />
   <meta property="og:description" content="The Heat of the Mine. On Wheels." />
   <meta name="theme-color" content="#0f0f0f" />
-  <title>Iron & Embers Food Truck | Southeast Kansas</title>
+  <title>Iron & Embers | Southeast Kansas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    /* ========================================
-       IRON & EMBERS FOOD TRUCK — STYLE SYSTEM
-       Coal · Ember · Iron · Gold
-       ======================================== */
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --coal:         #0f0f0f;
-      --coal-soft:    #191919;
-      --coal-mid:     #252525;
-      --iron:         #4a4a4a;
-      --iron-light:   #888888;
-      --ember:        #C0392B;
-      --ember-bright: #E74C3C;
-      --ember-glow:   rgba(192,57,43,0.18);
-      --rust:         #8B4513;
-      --gold:         #D4A017;
-      --gold-dim:     rgba(212,160,23,0.35);
-      --cream:        #F5F0E8;
-      --cream-warm:   #EDE5D5;
-      --white:        #ffffff;
-
-      --font-display:   'Playfair Display', Georgia, serif;
-      --font-body:      'Barlow', system-ui, sans-serif;
-      --font-condensed: 'Barlow Condensed', system-ui, sans-serif;
-      --max-w: 900px;
-      --radius: 2px;
-      --transition: 0.25s ease;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--coal);
-      color: var(--cream);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img { display: block; max-width: 100%; height: auto; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-    button { cursor: pointer; font-family: inherit; border: none; background: none; }
-
-    /* --- TYPOGRAPHY SCALE --- */
-    h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; }
-    em { font-style: italic; color: var(--ember); }
-
-    .eyebrow {
-      font-family: var(--font-condensed);
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.24em; text-transform: uppercase;
-      color: var(--iron-light); display: block; margin-bottom: 12px;
-    }
-    .eyebrow--gold { color: var(--gold); }
-    .eyebrow--ember { color: var(--ember); }
-
-    /* --- BUTTONS --- */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      font-family: var(--font-condensed);
-      font-size: 13px; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      padding: 14px 28px; border-radius: var(--radius);
-      transition: var(--transition); border: 2px solid transparent;
-    }
-    .btn--ember { background: var(--ember); color: var(--white); border-color: var(--ember); }
-    .btn--ember:hover { background: var(--ember-bright); border-color: var(--ember-bright); transform: translateY(-1px); }
-    .btn--outline { background: transparent; color: var(--cream); border-color: rgba(245,240,232,0.4); }
-    .btn--outline:hover { border-color: var(--cream); background: rgba(255,255,255,0.05); }
-    .btn--gold { background: var(--gold); color: var(--coal); border-color: var(--gold); }
-    .btn--gold:hover { filter: brightness(1.1); transform: translateY(-1px); }
-    .btn--full { width: 100%; }
-
-    /* --- SECTION BASE --- */
-    .section { padding: 80px 20px; }
-    .section__inner { max-width: var(--max-w); margin: 0 auto; }
-    .section__header { text-align: center; margin-bottom: 52px; }
-    .section__headline { font-size: clamp(30px, 6vw, 50px); margin-bottom: 14px; font-weight: 900; }
-    .section__sub { font-size: 16px; color: rgba(245,240,232,0.6); line-height: 1.75; max-width: 520px; margin: 0 auto; }
-
-    /* =====================================
-       ANNOUNCEMENT BANNER
-    ===================================== */
-    .announce-bar {
-      background: var(--ember);
-      text-align: center;
-      padding: 10px 20px;
-      font-family: var(--font-condensed);
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: rgba(255,255,255,0.9);
-      position: relative; z-index: 200;
-    }
-    .announce-bar a { color: var(--gold); text-decoration: underline; }
-
-    /* =====================================
-       NAVIGATION
-    ===================================== */
-    .nav {
-      position: sticky; top: 0; z-index: 100;
-      padding: 0 20px; height: 64px;
-      display: flex; align-items: center;
-      background: rgba(10,10,10,0.97);
-      border-bottom: 1px solid rgba(192,57,43,0.2);
-      backdrop-filter: blur(12px);
-    }
-    .nav__inner {
-      width: 100%; max-width: var(--max-w); margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav__logo {
-      display: flex; flex-direction: column; line-height: 1.1;
-    }
-    .nav__logo-text {
-      font-family: var(--font-display);
-      font-size: 18px; font-weight: 900;
-      color: var(--cream); letter-spacing: 0.01em;
-    }
-    .nav__logo-text .amp { color: var(--ember); }
-    .nav__logo-sub {
-      font-family: var(--font-condensed);
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--gold); margin-top: 1px;
-    }
-    .nav__links { display: flex; align-items: center; gap: 28px; }
-    .nav__links li a {
-      font-family: var(--font-condensed);
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: rgba(245,240,232,0.65); transition: color var(--transition);
-    }
-    .nav__links li a:hover { color: var(--cream); }
-    .nav__order-btn {
-      background: var(--ember); color: var(--white) !important;
-      padding: 8px 16px; border-radius: var(--radius);
-      font-family: var(--font-condensed);
-      font-size: 12px !important; font-weight: 700 !important;
-      letter-spacing: 0.12em; text-transform: uppercase;
-    }
-    .nav__order-btn:hover { background: var(--ember-bright) !important; }
-    .nav__toggle {
-      display: none; flex-direction: column; gap: 5px;
-      background: none; border: none; padding: 4px;
-    }
-    .nav__toggle span { display: block; width: 22px; height: 2px; background: var(--cream); transition: var(--transition); }
-    .nav__toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav__toggle.open span:nth-child(2) { opacity: 0; }
-    .nav__toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* =====================================
-       HERO — FOOD TRUCK SPECIFIC
-    ===================================== */
-    .hero {
-      min-height: 88vh;
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-      padding: 80px 20px 60px; text-align: center;
-    }
-    .hero__bg { position: absolute; inset: 0; }
-    .hero__bg-img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center 30%;
-      filter: brightness(0.28) saturate(0.7);
-    }
-    .hero__overlay {
-      position: absolute; inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(10,8,5,0.6) 0%, rgba(10,8,5,0.1) 35%, rgba(10,8,5,0.7) 80%, rgba(10,8,5,0.98) 100%),
-        radial-gradient(ellipse 75% 55% at 50% 45%, rgba(192,57,43,0.14) 0%, transparent 70%);
-    }
-
-    /* SVG Food Truck Illustration */
-    .hero__truck-wrap {
-      position: relative; z-index: 2;
-      width: clamp(220px, 60vw, 480px);
-      margin: 0 auto 32px;
-    }
-    .hero__truck-svg { width: 100%; height: auto; }
-
-    .hero__content { position: relative; z-index: 2; max-width: 700px; }
-    .hero__title {
-      font-family: var(--font-display);
-      font-size: clamp(42px, 10vw, 88px);
-      font-weight: 900; line-height: 0.95;
-      letter-spacing: -0.01em;
-      margin-bottom: 8px;
-    }
-    .hero__title .amp { color: var(--ember); }
-    .hero__subtitle {
-      font-family: var(--font-condensed);
-      font-size: clamp(13px, 3vw, 17px);
-      font-weight: 600; letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold); margin-bottom: 18px;
-    }
-    .hero__tagline {
-      font-size: clamp(15px, 3vw, 18px);
-      color: rgba(245,240,232,0.65);
-      margin-bottom: 36px; font-weight: 300;
-    }
-    .hero__actions {
-      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-    }
-
-    /* Animated ember particles */
-    .ember-particles {
-      position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      overflow: hidden;
-    }
-    .particle {
-      position: absolute; border-radius: 50%;
-      background: var(--ember); opacity: 0;
-      animation: rise linear infinite;
-    }
-    @keyframes rise {
-      0%   { opacity: 0; transform: translateY(0) scale(1); }
-      15%  { opacity: 0.7; }
-      85%  { opacity: 0.2; }
-      100% { opacity: 0; transform: translateY(-120vh) scale(0.3); }
-    }
-
-    /* =====================================
-       TAGLINE STRIP — SCROLLING TICKER
-    ===================================== */
-    .ticker-wrap {
-      background: var(--ember); padding: 11px 0; overflow: hidden;
-    }
-    .ticker-track {
-      display: flex; width: max-content;
-      animation: ticker 22s linear infinite;
-    }
-    .ticker-track:hover { animation-play-state: paused; }
-    .ticker-item {
-      font-family: var(--font-condensed);
-      font-size: 12px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(255,255,255,0.9);
-      white-space: nowrap; padding: 0 28px;
-      display: flex; align-items: center; gap: 28px;
-    }
-    .ticker-item::after {
-      content: '◆'; font-size: 6px;
-      color: rgba(255,255,255,0.4);
-    }
-    @keyframes ticker {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* =====================================
-       LIVE LOCATION / SCHEDULE
-    ===================================== */
-    .location-section { background: var(--coal-soft); }
-    .location-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-    .schedule-card {
-      background: var(--coal-mid);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .schedule-card__header {
-      background: var(--coal);
-      border-bottom: 2px solid var(--ember);
-      padding: 16px 20px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .schedule-card__header h3 {
-      font-family: var(--font-condensed);
-      font-size: 14px; font-weight: 700;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--cream);
-    }
-    .live-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: #2ecc71;
-      box-shadow: 0 0 8px rgba(46,204,113,0.8);
-      animation: pulse-dot 2s ease infinite;
-    }
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.5; transform: scale(1.3); }
-    }
-    .schedule-day {
-      padding: 14px 20px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      display: grid;
-      grid-template-columns: 80px 1fr auto;
-      gap: 12px;
-      align-items: center;
-    }
-    .schedule-day:last-child { border-bottom: none; }
-    .schedule-day--today { background: rgba(192,57,43,0.08); }
-    .schedule-day__dow {
-      font-family: var(--font-condensed);
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--iron-light);
-    }
-    .schedule-day--today .schedule-day__dow { color: var(--ember); }
-    .schedule-day__location {
-      font-size: 14px; font-weight: 500; color: var(--cream);
-    }
-    .schedule-day__time {
-      font-family: var(--font-condensed);
-      font-size: 12px; color: var(--iron-light);
-      white-space: nowrap;
-    }
-    .schedule-day--closed .schedule-day__location,
-    .schedule-day--closed .schedule-day__time { color: var(--iron); }
-
-    /* Map embed wrapper */
-    .map-wrap {
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.06);
-      position: relative;
-    }
-    .map-wrap iframe {
-      width: 100%; height: 340px;
-      display: block;
-      border: none; filter: saturate(0.7) brightness(0.9);
-    }
-    .map-overlay-badge {
-      position: absolute; top: 12px; left: 12px;
-      background: rgba(10,8,5,0.92); backdrop-filter: blur(8px);
-      border: 1px solid var(--ember);
-      border-radius: var(--radius);
-      padding: 8px 14px;
-      font-family: var(--font-condensed);
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--ember);
-      display: flex; align-items: center; gap: 8px;
-    }
-    .tracker-links {
-      margin-top: 20px;
-      display: flex; gap: 10px; flex-wrap: wrap;
-    }
-    .tracker-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--coal-mid);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius);
-      padding: 8px 14px;
-      font-family: var(--font-condensed);
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--iron-light);
-      transition: var(--transition);
-    }
-    .tracker-link:hover { border-color: var(--gold); color: var(--gold); }
-    .tracker-link-icon { font-size: 13px; }
-
-    /* =====================================
-       MENU
-    ===================================== */
-    .menu-section { background: var(--coal); }
-
-    .menu-tabs {
-      display: flex; gap: 4px;
-      background: var(--coal-mid);
-      border-radius: var(--radius);
-      padding: 4px; margin-bottom: 36px;
-      overflow-x: auto; scrollbar-width: none;
-    }
-    .menu-tabs::-webkit-scrollbar { display: none; }
-    .menu-tab {
-      flex: 1; min-width: 90px;
-      padding: 10px 14px;
-      font-family: var(--font-condensed);
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--iron-light);
-      border-radius: 1px; border: none;
-      background: none; cursor: pointer;
-      transition: var(--transition); white-space: nowrap;
-    }
-    .menu-tab.active {
-      background: var(--ember); color: var(--white);
-    }
-    .menu-panel { display: none; }
-    .menu-panel.active { display: block; }
-
-    .menu-items { display: flex; flex-direction: column; gap: 3px; }
-    .menu-item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      padding: 18px 20px;
-      background: var(--coal-soft);
-      border: 1px solid rgba(255,255,255,0.04);
-      border-radius: var(--radius);
-      transition: var(--transition);
-      align-items: start;
-    }
-    .menu-item:hover { border-color: rgba(192,57,43,0.25); background: rgba(25,25,25,0.9); }
-    .menu-item--featured { border-left: 3px solid var(--ember); }
-    .menu-item__name {
-      font-family: var(--font-display);
-      font-size: 17px; font-weight: 700;
-      color: var(--cream); margin-bottom: 4px; line-height: 1.2;
-    }
-    .menu-item__desc {
-      font-size: 13px; color: var(--iron-light);
-      line-height: 1.5;
-    }
-    .menu-item__tag {
-      display: inline-block;
-      background: rgba(192,57,43,0.15);
-      color: var(--ember);
-      font-family: var(--font-condensed);
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      padding: 2px 7px; border-radius: 1px;
-      margin-top: 6px;
-    }
-    .menu-item__price {
-      font-family: var(--font-display);
-      font-size: 18px; font-weight: 700;
-      color: var(--gold); white-space: nowrap;
-    }
-
-    /* PDF download CTA */
-    .menu-download-bar {
-      margin-top: 32px;
-      background: var(--coal-mid);
-      border: 1px solid rgba(212,160,23,0.2);
-      border-radius: var(--radius);
-      padding: 18px 20px;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; flex-wrap: wrap;
-    }
-    .menu-download-bar p {
-      font-family: var(--font-condensed);
-      font-size: 13px; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: rgba(245,240,232,0.55);
-    }
-
-    /* =====================================
-       ORDER AHEAD — PLACEHOLDER / STUB
-    ===================================== */
-    .order-section {
-      background: var(--coal-soft);
-      border-top: 1px solid rgba(192,57,43,0.15);
-    }
-    .order-coming-soon {
-      background: var(--coal-mid);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-      padding: 48px 32px;
-      text-align: center;
-    }
-    .order-icon {
-      font-size: 48px; margin-bottom: 20px; display: block;
-    }
-    .order-coming-soon h3 {
-      font-size: 28px; margin-bottom: 14px;
-    }
-    .order-coming-soon p {
-      font-size: 15px; color: rgba(245,240,232,0.55);
-      max-width: 420px; margin: 0 auto 28px; line-height: 1.7;
-    }
-    .order-notify-form {
-      display: flex; gap: 10px; max-width: 400px; margin: 0 auto;
-      flex-wrap: wrap;
-    }
-    .order-notify-form input {
-      flex: 1; min-width: 0;
-      background: var(--coal);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--radius);
-      padding: 13px 16px;
-      font-family: var(--font-body); font-size: 15px;
-      color: var(--cream); outline: none;
-      transition: var(--transition);
-    }
-    .order-notify-form input:focus { border-color: var(--ember); }
-    .order-notify-form input::placeholder { color: var(--iron); }
-    /* DEV NOTE: order-ahead stub — see /js/order-system-stub.js
-       TODO: Integrate Food Truck Pub or custom print-to-kitchen API.
-       When ready, replace this section with the live ordering widget.
-       The notify form should POST to a backend endpoint that stores emails
-       and triggers a welcome notification when ordering goes live. */
-
-    /* =====================================
-       CATERING / EVENTS
-    ===================================== */
-    .catering-section { background: var(--coal); }
-    .catering-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
-      align-items: center;
-    }
-    .catering-text .section__headline { text-align: left; font-size: clamp(28px, 5vw, 44px); }
-    .catering-text .section__headline { margin-bottom: 18px; }
-    .catering-text p {
-      font-size: 15px; color: rgba(245,240,232,0.6);
-      margin-bottom: 20px; line-height: 1.75;
-    }
-    .catering-types {
-      display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px;
-    }
-    .catering-type {
-      display: flex; gap: 14px; align-items: flex-start;
-    }
-    .catering-type__icon {
-      width: 36px; height: 36px; flex-shrink: 0;
-      background: rgba(192,57,43,0.12);
-      border: 1px solid rgba(192,57,43,0.25);
-      border-radius: var(--radius);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
-    }
-    .catering-type__text h4 {
-      font-family: var(--font-condensed);
-      font-size: 13px; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--cream); margin-bottom: 3px;
-    }
-    .catering-type__text p {
-      font-size: 13px; color: var(--iron-light);
-      margin-bottom: 0; line-height: 1.5;
-    }
-
-    /* Catering form */
-    .catering-form-wrap {
-      background: var(--coal-soft);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-    }
-    .catering-form-wrap h3 {
-      font-size: 22px; margin-bottom: 24px;
-    }
-    .form-group { margin-bottom: 16px; }
-    .form-group label {
-      display: block;
-      font-family: var(--font-condensed);
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--iron-light); margin-bottom: 7px;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      background: var(--coal);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius);
-      padding: 12px 14px;
-      font-family: var(--font-body); font-size: 15px;
-      color: var(--cream); outline: none;
-      transition: border-color var(--transition);
-      -webkit-appearance: none; appearance: none;
-    }
-    .form-group select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 14px center;
-      padding-right: 36px;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      border-color: var(--ember);
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--iron); }
-    .form-group textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .form-success {
-      display: none; text-align: center; padding: 24px;
-    }
-    .form-success .success-icon {
-      font-size: 32px; color: var(--ember); margin-bottom: 12px; display: block;
-    }
-    .form-success h4 { font-size: 20px; margin-bottom: 8px; }
-    .form-success p { font-size: 14px; color: var(--iron-light); }
-
-    /* =====================================
-       ABOUT / STORY
-    ===================================== */
-    .about-section { background: var(--coal-soft); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .about-visual {
-      position: relative;
-    }
-    /* SVG Mining Illustration */
-    .about-art { width: 100%; height: auto; }
-    .about-text .section__headline {
-      text-align: left; font-size: clamp(28px, 5vw, 44px); margin-bottom: 20px;
-    }
-    .about-text p {
-      font-size: 15px; color: rgba(245,240,232,0.6);
-      line-height: 1.8; margin-bottom: 16px;
-    }
-    .about-stats {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 16px; margin-top: 36px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(255,255,255,0.07);
-    }
-    .about-stat__num {
-      display: block; font-family: var(--font-display);
-      font-size: 36px; font-weight: 700;
-      color: var(--ember); line-height: 1; margin-bottom: 4px;
-    }
-    .about-stat__label {
-      font-family: var(--font-condensed); font-size: 10px;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--iron-light);
-    }
-
-    /* =====================================
-       SOCIAL / FOLLOW
-    ===================================== */
-    .social-section {
-      background: var(--coal);
-      border-top: 1px solid rgba(255,255,255,0.04);
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .social-section h2 { font-size: 28px; margin-bottom: 8px; }
-    .social-section p { color: var(--iron-light); font-size: 14px; margin-bottom: 28px; }
-    .social-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .social-link {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--coal-mid);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius);
-      padding: 12px 22px;
-      font-family: var(--font-condensed);
-      font-size: 12px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--cream); transition: var(--transition);
-    }
-    .social-link:hover { border-color: var(--ember); color: var(--ember); }
-    .social-link-icon { font-size: 15px; }
-
-    /* =====================================
-       FOOTER
-    ===================================== */
-    .footer {
-      background: var(--coal); border-top: 1px solid rgba(192,57,43,0.2);
-      padding: 48px 20px 28px;
-    }
-    .footer__inner {
-      max-width: var(--max-w); margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr 1fr;
-      gap: 40px; margin-bottom: 40px;
-    }
-    .footer__brand-name {
-      font-family: var(--font-display);
-      font-size: 22px; font-weight: 900;
-      margin-bottom: 4px;
-    }
-    .footer__brand-name .amp { color: var(--ember); }
-    .footer__brand-sub {
-      font-family: var(--font-condensed);
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 12px;
-    }
-    .footer__tagline {
-      font-size: 13px; color: var(--iron-light);
-      font-style: italic; line-height: 1.6;
-    }
-    .footer__col h5 {
-      font-family: var(--font-condensed);
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--iron-light); margin-bottom: 16px;
-    }
-    .footer__col a, .footer__col p {
-      display: block; font-size: 14px;
-      color: rgba(245,240,232,0.5);
-      margin-bottom: 8px; transition: color var(--transition);
-    }
-    .footer__col a:hover { color: var(--cream); }
-    .footer__bottom {
-      max-width: var(--max-w); margin: 0 auto;
-      padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06);
-      text-align: center;
-      font-size: 12px; color: var(--iron);
-      font-family: var(--font-condensed); letter-spacing: 0.1em;
-    }
-
-    /* =====================================
-       MOBILE RESPONSIVE
-    ===================================== */
-    @media (max-width: 700px) {
-      .nav__links { display: none; }
-      .nav__links.open {
-        display: flex; flex-direction: column;
-        position: fixed; top: 64px; left: 0; right: 0; bottom: 0;
-        background: rgba(10,10,10,0.98);
-        padding: 40px 24px; gap: 24px; z-index: 99;
-        align-items: flex-start; justify-content: flex-start;
-      }
-      .nav__links.open li a { font-size: 22px; letter-spacing: 0.06em; color: var(--cream); }
-      .nav__links.open li:last-child a {
-        background: var(--ember); padding: 12px 24px;
-        display: inline-block; border-radius: var(--radius);
-        color: var(--white) !important;
-      }
-      .nav__toggle { display: flex; }
-
-      .section { padding: 60px 16px; }
-      .location-grid { grid-template-columns: 1fr; gap: 28px; }
-      .about-grid { grid-template-columns: 1fr; gap: 36px; }
-      .catering-grid { grid-template-columns: 1fr; gap: 36px; }
-      .footer__inner { grid-template-columns: 1fr; gap: 32px; }
-      .form-row { grid-template-columns: 1fr; }
-      .about-stats { grid-template-columns: repeat(3, 1fr); }
-      .schedule-day { grid-template-columns: 70px 1fr auto; gap: 8px; }
-    }
-
-    @media (max-width: 480px) {
-      .hero__title { font-size: 52px; }
-      .menu-tabs .menu-tab { font-size: 10px; padding: 8px 10px; min-width: 70px; }
-    }
-
-    /* =====================================
-       ORE DIVIDER
-    ===================================== */
-    .ore-divider {
-      display: flex; align-items: center; gap: 16px;
-      padding: 0 20px; max-width: var(--max-w); margin: 0 auto;
-    }
-    .ore-divider__line {
-      flex: 1; height: 1px;
-      background: linear-gradient(to right, transparent, rgba(192,57,43,0.3));
-    }
-    .ore-divider__line:last-child {
-      background: linear-gradient(to left, transparent, rgba(192,57,43,0.3));
-    }
-    .ore-divider__icon { width: 24px; height: 24px; flex-shrink: 0; }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <!-- ANNOUNCEMENT BAR -->
   <div class="announce-bar">
-    🔥 Now rolling through Pittsburg, KS — Follow us on Instagram for real-time updates
+    🔥 Now rolling through Pittsburg, KS — Follow us on Instagram for real-time location drops
   </div>
 
   <!-- NAVIGATION -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="#top" class="nav__logo">
+        <img src="images/logo-round.png" alt="Iron & Embers" class="nav__logo-icon" />
         <span class="nav__logo-text">Iron <span class="amp">&</span> Embers</span>
-        <span class="nav__logo-sub">Food Truck</span>
       </a>
       <button class="nav__toggle" id="navToggle" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -785,85 +40,18 @@
     </div>
   </nav>
 
-  <!-- ==============================
-       HERO
-  ============================== -->
+  <!-- HERO -->
   <header class="hero" id="top">
     <div class="hero__bg">
-      <img src="images/interior.jpg" alt="Iron & Embers food" class="hero__bg-img" />
+      <img src="images/interior.jpg" alt="Iron & Embers" class="hero__bg-img" />
       <div class="hero__overlay"></div>
     </div>
-
-    <!-- Ember particle effect -->
     <div class="ember-particles" id="particles"></div>
-
-    <!-- Truck SVG Illustration -->
-    <div class="hero__truck-wrap">
-      <svg class="hero__truck-svg" viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
-        <!-- Truck body -->
-        <rect x="30" y="70" width="380" height="110" rx="4" fill="#1a1a1a" stroke="#C0392B" stroke-width="2"/>
-        <!-- Truck cab -->
-        <rect x="340" y="50" width="90" height="130" rx="4" fill="#252525" stroke="#C0392B" stroke-width="2"/>
-        <!-- Cab window -->
-        <rect x="352" y="60" width="66" height="50" rx="2" fill="#0a0a0a" stroke="#4a4a4a" stroke-width="1.5"/>
-        <line x1="385" y1="60" x2="385" y2="110" stroke="#333" stroke-width="1"/>
-        <!-- Wind deflector -->
-        <path d="M340 50 L430 50 L430 40 L355 40 Z" fill="#2a2a2a" stroke="#C0392B" stroke-width="1.5"/>
-        <!-- Service window on truck body -->
-        <rect x="60" y="80" width="220" height="80" rx="2" fill="#0a0a0a" stroke="#4a4a4a" stroke-width="1"/>
-        <!-- Window opening (open) -->
-        <rect x="68" y="88" width="204" height="65" rx="1" fill="#141414" stroke="#333" stroke-width="1"/>
-        <!-- Menu board in window -->
-        <rect x="75" y="94" width="180" height="52" rx="1" fill="#1a0a0a"/>
-        <text x="165" y="112" text-anchor="middle" font-family="Georgia, serif" font-size="9" font-weight="bold" fill="#D4A017" letter-spacing="1">IRON &amp; EMBERS</text>
-        <text x="165" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#888" letter-spacing="2">FOOD TRUCK</text>
-        <line x1="95" y1="132" x2="235" y2="132" stroke="#C0392B" stroke-width="0.5"/>
-        <text x="140" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#666">SMOKED · FIRED · FORGED</text>
-        <!-- Iron & Embers logo plate on truck side -->
-        <rect x="50" y="140" width="4" height="30" rx="1" fill="#C0392B"/>
-        <!-- Signage panel left side -->
-        <rect x="58" y="168" width="275" height="3" rx="1" fill="#C0392B" opacity="0.6"/>
-        <!-- Exhaust pipe -->
-        <rect x="338" y="30" width="8" height="22" rx="2" fill="#333" stroke="#4a4a4a" stroke-width="1"/>
-        <!-- Smoke from exhaust -->
-        <ellipse cx="342" cy="24" rx="6" ry="4" fill="#2a2a2a" opacity="0.7"/>
-        <ellipse cx="346" cy="16" rx="5" ry="4" fill="#333" opacity="0.5"/>
-        <ellipse cx="340" cy="10" rx="4" ry="3" fill="#444" opacity="0.3"/>
-        <!-- Wheels -->
-        <circle cx="100" cy="180" r="28" fill="#111" stroke="#4a4a4a" stroke-width="3"/>
-        <circle cx="100" cy="180" r="16" fill="#1a1a1a" stroke="#C0392B" stroke-width="2"/>
-        <circle cx="100" cy="180" r="5" fill="#C0392B"/>
-        <circle cx="310" cy="180" r="28" fill="#111" stroke="#4a4a4a" stroke-width="3"/>
-        <circle cx="310" cy="180" r="16" fill="#1a1a1a" stroke="#C0392B" stroke-width="2"/>
-        <circle cx="310" cy="180" r="5" fill="#C0392B"/>
-        <circle cx="400" cy="180" r="20" fill="#111" stroke="#4a4a4a" stroke-width="2.5"/>
-        <circle cx="400" cy="180" r="11" fill="#1a1a1a" stroke="#C0392B" stroke-width="1.5"/>
-        <circle cx="400" cy="180" r="4" fill="#C0392B"/>
-        <!-- Ground shadow -->
-        <ellipse cx="240" cy="208" rx="220" ry="10" fill="rgba(0,0,0,0.4)"/>
-        <!-- Ember glow from exhaust -->
-        <circle cx="342" cy="20" r="3" fill="#C0392B" opacity="0.8"/>
-        <circle cx="345" cy="14" r="2" fill="#E74C3C" opacity="0.6"/>
-        <circle cx="339" cy="9" r="1.5" fill="#D4A017" opacity="0.5"/>
-        <!-- Serving counter arm (awning) -->
-        <rect x="60" y="74" width="220" height="6" rx="2" fill="#C0392B"/>
-        <!-- Awning stripes -->
-        <line x1="90" y1="74" x2="90" y2="80" stroke="#a03020" stroke-width="1"/>
-        <line x1="120" y1="74" x2="120" y2="80" stroke="#a03020" stroke-width="1"/>
-        <line x1="150" y1="74" x2="150" y2="80" stroke="#a03020" stroke-width="1"/>
-        <line x1="180" y1="74" x2="180" y2="80" stroke="#a03020" stroke-width="1"/>
-        <line x1="210" y1="74" x2="210" y2="80" stroke="#a03020" stroke-width="1"/>
-        <line x1="240" y1="74" x2="240" y2="80" stroke="#a03020" stroke-width="1"/>
-        <!-- Pickaxe badge on truck door -->
-        <g transform="translate(296, 95)">
-          <polygon points="0,-12 3,-4 12,0 3,4 0,12 -3,4 -12,0 -3,-4" fill="#C0392B" opacity="0.9"/>
-          <polygon points="0,-7 2,-2 7,0 2,2 0,7 -2,2 -7,0 -2,-2" fill="#0f0f0f"/>
-        </g>
-      </svg>
-    </div>
-
     <div class="hero__content">
-      <p class="hero__subtitle">Southeast Kansas · Est. 2024</p>
+      <div class="hero__logo-wrap">
+        <img src="images/logo-round.png" alt="Iron & Embers" class="hero__logo" />
+      </div>
+      <p class="hero__subtitle">Southeast Kansas · Food Truck</p>
       <h1 class="hero__title">Iron <span class="amp">&</span><br/>Embers</h1>
       <p class="hero__tagline">The Heat of the Mine. On Wheels.</p>
       <div class="hero__actions">
@@ -875,39 +63,35 @@
 
   <!-- TICKER -->
   <div class="ticker-wrap" aria-hidden="true">
-    <div class="ticker-track" id="ticker">
-      <div class="ticker-item">Smoked BBQ</div>
-      <div class="ticker-item">Coal Country Comfort</div>
+    <div class="ticker-track">
+      <div class="ticker-item">Homemade Cinnamon Rolls</div>
+      <div class="ticker-item">Fresh-Baked Breads</div>
+      <div class="ticker-item">Breakfast All Morning</div>
+      <div class="ticker-item">Lunch Done Right</div>
+      <div class="ticker-item">Pies · Cakes · Cookies</div>
       <div class="ticker-item">Pittsburg, KS</div>
-      <div class="ticker-item">Claim Jumper Burgers</div>
-      <div class="ticker-item">Mine-Inspired Flavors</div>
       <div class="ticker-item">Catering Available</div>
-      <div class="ticker-item">Order Ahead Coming Soon</div>
-      <div class="ticker-item">Southeast Kansas Pride</div>
-      <!-- Duplicated for seamless loop -->
-      <div class="ticker-item">Smoked BBQ</div>
       <div class="ticker-item">Coal Country Comfort</div>
+      <div class="ticker-item">Homemade Cinnamon Rolls</div>
+      <div class="ticker-item">Fresh-Baked Breads</div>
+      <div class="ticker-item">Breakfast All Morning</div>
+      <div class="ticker-item">Lunch Done Right</div>
+      <div class="ticker-item">Pies · Cakes · Cookies</div>
       <div class="ticker-item">Pittsburg, KS</div>
-      <div class="ticker-item">Claim Jumper Burgers</div>
-      <div class="ticker-item">Mine-Inspired Flavors</div>
       <div class="ticker-item">Catering Available</div>
-      <div class="ticker-item">Order Ahead Coming Soon</div>
-      <div class="ticker-item">Southeast Kansas Pride</div>
+      <div class="ticker-item">Coal Country Comfort</div>
     </div>
   </div>
 
-  <!-- ==============================
-       LIVE LOCATION & SCHEDULE
-  ============================== -->
+  <!-- FIND US -->
   <section class="section location-section" id="location">
     <div class="section__inner">
       <div class="section__header">
         <p class="eyebrow eyebrow--ember">Find the Truck</p>
         <h2 class="section__headline">Where We're<br/><em>Firing Today</em></h2>
-        <p class="section__sub">We move, you follow. Check the schedule below or track us live on StreetFoodFinder.</p>
+        <p class="section__sub">We move, you follow. Check the schedule or track us live on StreetFoodFinder.</p>
       </div>
       <div class="location-grid">
-        <!-- Weekly Schedule -->
         <div>
           <div class="schedule-card">
             <div class="schedule-card__header">
@@ -917,22 +101,22 @@
             <div class="schedule-day schedule-day--today">
               <span class="schedule-day__dow">Wednesday</span>
               <span class="schedule-day__location">4th & Broadway, Pittsburg</span>
-              <span class="schedule-day__time">11am – 7pm</span>
+              <span class="schedule-day__time">7am – 2pm</span>
             </div>
             <div class="schedule-day">
               <span class="schedule-day__dow">Thursday</span>
               <span class="schedule-day__location">Pittsburg State University</span>
-              <span class="schedule-day__time">11am – 3pm</span>
+              <span class="schedule-day__time">7am – 1pm</span>
             </div>
             <div class="schedule-day">
               <span class="schedule-day__dow">Friday</span>
               <span class="schedule-day__location">Farlington Farmers Market</span>
-              <span class="schedule-day__time">10am – 2pm</span>
+              <span class="schedule-day__time">8am – 1pm</span>
             </div>
             <div class="schedule-day">
               <span class="schedule-day__dow">Saturday</span>
               <span class="schedule-day__location">Downtown Pittsburg Square</span>
-              <span class="schedule-day__time">11am – 8pm</span>
+              <span class="schedule-day__time">7am – 3pm</span>
             </div>
             <div class="schedule-day schedule-day--closed">
               <span class="schedule-day__dow">Sunday</span>
@@ -940,22 +124,12 @@
               <span class="schedule-day__time">—</span>
             </div>
           </div>
-
-          <!-- Tracking platform links -->
           <div class="tracker-links">
-            <a href="https://streetfoodfinder.com/" target="_blank" rel="noopener" class="tracker-link">
-              <span class="tracker-link-icon">📍</span> StreetFoodFinder
-            </a>
-            <a href="https://gotruckster.com/" target="_blank" rel="noopener" class="tracker-link">
-              <span class="tracker-link-icon">🚚</span> Truckster
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener" class="tracker-link">
-              <span class="tracker-link-icon">📸</span> Instagram Live Updates
-            </a>
+            <a href="https://streetfoodfinder.com/" target="_blank" rel="noopener" class="tracker-link">📍 StreetFoodFinder</a>
+            <a href="https://gotruckster.com/" target="_blank" rel="noopener" class="tracker-link">🚚 Truckster</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="tracker-link">📸 Instagram</a>
           </div>
         </div>
-
-        <!-- Map embed -->
         <div>
           <div class="map-wrap">
             <iframe
@@ -973,7 +147,6 @@
     </div>
   </section>
 
-  <!-- ORE DIVIDER -->
   <div class="ore-divider" aria-hidden="true">
     <div class="ore-divider__line"></div>
     <svg class="ore-divider__icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -984,136 +157,194 @@
     <div class="ore-divider__line"></div>
   </div>
 
-  <!-- ==============================
-       MENU
-  ============================== -->
+  <!-- MENU -->
   <section class="section menu-section" id="menu">
     <div class="section__inner">
       <div class="section__header">
         <p class="eyebrow">The Menu</p>
-        <h2 class="section__headline">Named for<br/><em>the Mine.</em></h2>
-        <p class="section__sub">Down-home comfort cooked over hardwood fire. Every item carries the coal-mining spirit of Southeast Kansas.</p>
+        <h2 class="section__headline">Made from<br/><em>Scratch. Every Day.</em></h2>
+        <p class="section__sub">Homemade breads, fresh-baked goods, and hearty breakfast & lunch — named for the mine, made with heart.</p>
       </div>
 
-      <!-- Tab navigation -->
+      <!-- Bakery callout -->
+      <div class="bakery-highlight">
+        <div class="bakery-card">
+          <span class="bakery-card__icon">🍞</span>
+          <div class="bakery-card__label">Homemade Breads</div>
+        </div>
+        <div class="bakery-card">
+          <span class="bakery-card__icon">🥐</span>
+          <div class="bakery-card__label">Cinnamon Rolls</div>
+        </div>
+        <div class="bakery-card">
+          <span class="bakery-card__icon">🥧</span>
+          <div class="bakery-card__label">Pies · Cakes · Cookies</div>
+        </div>
+      </div>
+
+      <!-- Menu tabs -->
       <div class="menu-tabs" role="tablist">
-        <button class="menu-tab active" role="tab" data-tab="burgers">Burgers</button>
-        <button class="menu-tab" role="tab" data-tab="plates">Plates</button>
-        <button class="menu-tab" role="tab" data-tab="starters">Starters</button>
+        <button class="menu-tab active" role="tab" data-tab="breakfast">Breakfast</button>
+        <button class="menu-tab" role="tab" data-tab="lunch">Lunch</button>
+        <button class="menu-tab" role="tab" data-tab="bakery">Bakery</button>
         <button class="menu-tab" role="tab" data-tab="drinks">Drinks</button>
       </div>
 
-      <!-- BURGERS -->
-      <div class="menu-panel active" id="tab-burgers">
+      <!-- BREAKFAST -->
+      <div class="menu-panel active" id="tab-breakfast">
         <div class="menu-items">
           <div class="menu-item menu-item--featured">
             <div>
-              <div class="menu-item__name">The Claim Jumper</div>
-              <div class="menu-item__desc">1/2 lb smash patty, pepper jack, jalapeño bacon, ember-roasted onions, chipotle aioli on a brioche bun</div>
+              <div class="menu-item__name">The Miner's Plate</div>
+              <div class="menu-item__desc">Two eggs your way, two strips of bacon or sausage patty, home fries, and a thick slice of homemade toast</div>
               <span class="menu-item__tag">⭐ Signature</span>
             </div>
-            <div class="menu-item__price">$13.99</div>
+            <div class="menu-item__price">$10.99</div>
           </div>
           <div class="menu-item">
             <div>
-              <div class="menu-item__name">The Canary</div>
-              <div class="menu-item__desc">Crispy fried chicken thigh, honey hot glaze, pickled slaw, dill pickle on a toasted potato bun</div>
+              <div class="menu-item__name">The Canary Scramble</div>
+              <div class="menu-item__desc">Three-egg scramble with pepper jack, jalapeño, sausage crumble, and ember salsa on homemade sourdough</div>
             </div>
-            <div class="menu-item__price">$12.99</div>
+            <div class="menu-item__price">$9.99</div>
           </div>
           <div class="menu-item">
             <div>
-              <div class="menu-item__name">The Shaft Single</div>
-              <div class="menu-item__desc">1/3 lb smash patty, American cheese, yellow mustard, diced onion, dill pickles — OG style</div>
-            </div>
-            <div class="menu-item__price">$8.99</div>
-          </div>
-          <div class="menu-item">
-            <div>
-              <div class="menu-item__name">The Double Lode</div>
-              <div class="menu-item__desc">Two 1/3 lb patties, smoked gouda, ember sauce, lettuce, tomato, house pickles</div>
+              <div class="menu-item__name">Foreman's Biscuit Sandwich</div>
+              <div class="menu-item__desc">Buttermilk biscuit baked fresh daily, fried egg, American cheese, choice of bacon or sausage</div>
               <span class="menu-item__tag">🔥 Most Popular</span>
-            </div>
-            <div class="menu-item__price">$14.99</div>
-          </div>
-          <div class="menu-item">
-            <div>
-              <div class="menu-item__name">The Blacker Seam</div>
-              <div class="menu-item__desc">Smash patty, black bean patty, smoked cheddar, roasted poblano, avocado crema, arugula</div>
-              <span class="menu-item__tag">🌱 Veggie</span>
-            </div>
-            <div class="menu-item__price">$11.99</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PLATES -->
-      <div class="menu-panel" id="tab-plates">
-        <div class="menu-items">
-          <div class="menu-item menu-item--featured">
-            <div>
-              <div class="menu-item__name">Country Fried Steak Plate</div>
-              <div class="menu-item__desc">Hand-breaded cube steak, white gravy, two sides. Served all day.</div>
-              <span class="menu-item__tag">⭐ Signature</span>
-            </div>
-            <div class="menu-item__price">$14.99</div>
-          </div>
-          <div class="menu-item">
-            <div>
-              <div class="menu-item__name">Smoked Brisket Plate</div>
-              <div class="menu-item__desc">8oz sliced brisket, pit-smoked 12 hrs, house-made BBQ sauce, two sides</div>
-            </div>
-            <div class="menu-item__price">$17.99</div>
-          </div>
-          <div class="menu-item">
-            <div>
-              <div class="menu-item__name">Miner's Breakfast Dog</div>
-              <div class="menu-item__desc">Smoked sausage link, fried egg, pepper relish, on a toasted hoagie — served till noon</div>
-              <span class="menu-item__tag">🌅 Breakfast</span>
-            </div>
-            <div class="menu-item__price">$9.99</div>
-          </div>
-          <div class="menu-item">
-            <div>
-              <div class="menu-item__name">Ore Cart Mac</div>
-              <div class="menu-item__desc">Smoked brisket over creamy jalapeño mac & cheese, topped with crispy onions</div>
-            </div>
-            <div class="menu-item__price">$12.99</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- STARTERS -->
-      <div class="menu-panel" id="tab-starters">
-        <div class="menu-items">
-          <div class="menu-item">
-            <div>
-              <div class="menu-item__name">Loaded Mine Fries</div>
-              <div class="menu-item__desc">Thick-cut fries, coal queso, jalapeño bacon, sour cream, green onions</div>
-            </div>
-            <div class="menu-item__price">$9.99</div>
-          </div>
-          <div class="menu-item">
-            <div>
-              <div class="menu-item__name">Coal Queso & Chips</div>
-              <div class="menu-item__desc">House-made smoked queso with roasted tomato, jalapeño, served with thick-cut chips</div>
             </div>
             <div class="menu-item__price">$7.99</div>
           </div>
           <div class="menu-item">
             <div>
-              <div class="menu-item__name">Fried Pickle Chips</div>
-              <div class="menu-item__desc">Dill pickle coins, seasoned breading, served with ember ranch</div>
+              <div class="menu-item__name">Ore Cart Gravy Bowl</div>
+              <div class="menu-item__desc">Home fries smothered in house-made sausage gravy, topped with a fried egg and chives</div>
             </div>
-            <div class="menu-item__price">$6.99</div>
+            <div class="menu-item__price">$8.99</div>
           </div>
           <div class="menu-item">
             <div>
-              <div class="menu-item__name">Foreman's Wings</div>
-              <div class="menu-item__desc">8 smoked then fried wings, choice of: ember hot, gold honey, or dry rub</div>
-              <span class="menu-item__tag">🔥 Fan Favorite</span>
+              <div class="menu-item__name">Cinnamon Roll French Toast</div>
+              <div class="menu-item__desc">Thick-sliced homemade cinnamon roll bread, egg-dipped and griddle-crisped, with powdered sugar and maple drizzle</div>
+              <span class="menu-item__tag--gold menu-item__tag">✨ Fan Favorite</span>
+            </div>
+            <div class="menu-item__price">$8.99</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Two Eggs & Toast</div>
+              <div class="menu-item__desc">Two eggs any style with buttered homemade white or wheat toast</div>
+            </div>
+            <div class="menu-item__price">$5.99</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LUNCH -->
+      <div class="menu-panel" id="tab-lunch">
+        <div class="menu-items">
+          <div class="menu-item menu-item--featured">
+            <div>
+              <div class="menu-item__name">The Claim Jumper</div>
+              <div class="menu-item__desc">Smash burger on a homemade brioche-style bun, pepper jack, jalapeño bacon, ember-roasted onions, chipotle aioli</div>
+              <span class="menu-item__tag">⭐ Signature</span>
             </div>
             <div class="menu-item__price">$12.99</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">The Shaft Grilled Cheese</div>
+              <div class="menu-item__desc">Three-cheese blend on thick-sliced homemade white bread, butter-crisped on the griddle. Add tomato or bacon +$1</div>
+            </div>
+            <div class="menu-item__price">$7.99</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Coal Country BLT</div>
+              <div class="menu-item__desc">Thick-cut bacon, vine tomato, crisp lettuce, house mayo on toasted homemade sourdough</div>
+              <span class="menu-item__tag">🔥 Most Popular</span>
+            </div>
+            <div class="menu-item__price">$9.99</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">The Canary Chicken Sandwich</div>
+              <div class="menu-item__desc">Crispy fried chicken thigh, honey hot glaze, pickled slaw, dill pickle on a toasted homemade bun</div>
+            </div>
+            <div class="menu-item__price">$11.99</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Loaded Mine Fries</div>
+              <div class="menu-item__desc">Thick-cut fries, coal queso, jalapeño, sour cream, green onions</div>
+            </div>
+            <div class="menu-item__price">$8.99</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Soup of the Day</div>
+              <div class="menu-item__desc">Ask at the window — served with a slice of homemade bread</div>
+            </div>
+            <div class="menu-item__price">$6.99</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BAKERY -->
+      <div class="menu-panel" id="tab-bakery">
+        <div class="menu-items">
+          <div class="menu-item menu-item--featured">
+            <div>
+              <div class="menu-item__name">Giant Cinnamon Roll</div>
+              <div class="menu-item__desc">Oversized pull-apart roll, baked fresh each morning, smothered in cream cheese icing</div>
+              <span class="menu-item__tag--gold menu-item__tag">✨ Baked Fresh Daily</span>
+            </div>
+            <div class="menu-item__price">$4.99</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Loaf of the Day</div>
+              <div class="menu-item__desc">Rotating daily — sourdough, white, wheat, or jalapeño cheddar. Full loaf or half available</div>
+              <span class="menu-item__tag--gold menu-item__tag">✨ Ask at Window</span>
+            </div>
+            <div class="menu-item__price">From $5.99</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Slice of Pie</div>
+              <div class="menu-item__desc">Rotating seasonal flavors — apple, cherry, pecan, chess. Ask for today's selection</div>
+            </div>
+            <div class="menu-item__price">$4.49</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Whole Pie (Pre-Order)</div>
+              <div class="menu-item__desc">Order a full pie 48 hrs in advance. Perfect for events, holidays, or gifting</div>
+            </div>
+            <div class="menu-item__price">$22.99</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Slice of Cake</div>
+              <div class="menu-item__desc">Rotating flavors — ask at the window. Layered, frosted, made from scratch</div>
+            </div>
+            <div class="menu-item__price">$4.49</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Cookies (3-pack)</div>
+              <div class="menu-item__desc">Chocolate chip, snickerdoodle, or oatmeal raisin — baked in small batches</div>
+              <span class="menu-item__tag">🍪 Grab & Go</span>
+            </div>
+            <div class="menu-item__price">$3.99</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Custom Orders</div>
+              <div class="menu-item__desc">Birthday cakes, event pies, bread for catering — use the Catering form below to inquire</div>
+            </div>
+            <div class="menu-item__price">Inquire</div>
           </div>
         </div>
       </div>
@@ -1121,6 +352,13 @@
       <!-- DRINKS -->
       <div class="menu-panel" id="tab-drinks">
         <div class="menu-items">
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Canteen Coffee</div>
+              <div class="menu-item__desc">Hot drip coffee — regular or dark roast. Free refills at the window while you wait</div>
+            </div>
+            <div class="menu-item__price">$2.49</div>
+          </div>
           <div class="menu-item">
             <div>
               <div class="menu-item__name">Canteen Sweet Tea</div>
@@ -1131,39 +369,32 @@
           <div class="menu-item">
             <div>
               <div class="menu-item__name">Fountain Drinks</div>
-              <div class="menu-item__desc">Pepsi products, free refills when parked</div>
+              <div class="menu-item__desc">Pepsi products</div>
             </div>
             <div class="menu-item__price">$2.49</div>
           </div>
           <div class="menu-item">
             <div>
               <div class="menu-item__name">Ember Lemonade</div>
-              <div class="menu-item__desc">Fresh-squeezed lemonade with jalapeño simple syrup and a chili salt rim</div>
+              <div class="menu-item__desc">Fresh-squeezed with jalapeño simple syrup and a chili salt rim</div>
               <span class="menu-item__tag">🌶️ Spicy</span>
             </div>
             <div class="menu-item__price">$3.99</div>
           </div>
           <div class="menu-item">
-            <div>
-              <div class="menu-item__name">Bottled Water</div>
-              <div class="menu-item__desc"></div>
-            </div>
+            <div><div class="menu-item__name">Bottled Water</div></div>
             <div class="menu-item__price">$1.49</div>
           </div>
         </div>
       </div>
 
-      <!-- Menu PDF download placeholder -->
       <div class="menu-download-bar">
         <p>Full menu with allergen info available as PDF</p>
-        <a href="#" class="btn btn--outline" style="padding: 10px 20px; font-size: 11px;">
-          ↓ Download Menu PDF
-        </a>
+        <a href="#" class="btn btn--outline" style="padding: 10px 20px; font-size: 11px;">↓ Download Menu PDF</a>
       </div>
     </div>
   </section>
 
-  <!-- ORE DIVIDER -->
   <div class="ore-divider" aria-hidden="true">
     <div class="ore-divider__line"></div>
     <svg class="ore-divider__icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1173,14 +404,11 @@
     <div class="ore-divider__line"></div>
   </div>
 
-  <!-- ==============================
-       ORDER AHEAD — STUB / COMING SOON
+  <!-- ORDER AHEAD STUB
        TODO: Integrate Food Truck Pub (foodtruck.pub) or custom print-to-kitchen backend.
-       See /js/order-system-stub.js for scaffolding.
-       The ordering flow needs: item selection → cart → checkout (Stripe or Square) →
-       order ticket printed at truck via thermal printer (Epson TM-T20 or similar).
-       Notify emails stored here should be migrated to backend when system is ready.
-  ============================== -->
+       See /js/order-system-stub.js for full scaffolding and decision notes.
+       Replace this section with live ordering widget when backend is ready.
+  -->
   <section class="section order-section" id="order">
     <div class="section__inner">
       <div class="section__header">
@@ -1189,9 +417,9 @@
       </div>
       <div class="order-coming-soon">
         <span class="order-icon">🚧</span>
-        <h3>Coming Soon — Order from the Truck</h3>
-        <p>We're building an online ordering system so you can place your order before you roll up to the window. Skip the wait, grab your food hot.</p>
-        <p style="font-size:13px; color: var(--iron); margin-bottom: 24px;">Be the first to know when it launches:</p>
+        <h3>Online Ordering Coming Soon</h3>
+        <p>We're setting up online ordering so you can place your breakfast or lunch order before you roll up to the window — and grab your baked goods before they sell out.</p>
+        <p style="font-size:13px; color: var(--iron); margin-bottom: 24px;">Be first to know when it launches:</p>
         <div class="order-notify-form">
           <input type="email" id="notifyEmail" placeholder="your@email.com" />
           <button class="btn btn--ember" onclick="handleNotifySignup()">Notify Me</button>
@@ -1201,45 +429,48 @@
     </div>
   </section>
 
-  <!-- ==============================
-       CATERING
-  ============================== -->
+  <!-- CATERING -->
   <section class="section catering-section" id="catering">
     <div class="section__inner">
+      <div class="section__header">
+        <p class="eyebrow eyebrow--ember">Private Catering</p>
+        <h2 class="section__headline">Bring the Truck<br/><em>to Your Event.</em></h2>
+        <p class="section__sub">Fresh-baked goods, hot breakfast, or a full lunch spread — we roll out for any occasion in the Four-State region.</p>
+      </div>
       <div class="catering-grid">
-        <!-- Left: Catering info -->
         <div class="catering-text">
-          <p class="eyebrow eyebrow--ember">Private Catering</p>
-          <h2 class="section__headline" style="text-align:left; font-size: clamp(28px,5vw,44px);">Bring the Truck<br/><em>to Your Event.</em></h2>
-          <p>Whether it's a company lunch, a grad party, or a festival weekend — Iron & Embers rolls out for any occasion in the Four-State region.</p>
-
           <div class="catering-types">
             <div class="catering-type">
               <div class="catering-type__icon">🏢</div>
               <div class="catering-type__text">
-                <h4>Corporate Lunches</h4>
-                <p>Minimum 25 guests. We set up, serve, and clean up on-site. Available Mon–Fri.</p>
+                <h4>Corporate Breakfasts & Lunches</h4>
+                <p>Minimum 25 guests. We set up, serve, and clean up. Fresh rolls, biscuit bars, sandwich spreads — tailored to your team.</p>
               </div>
             </div>
             <div class="catering-type">
               <div class="catering-type__icon">🎉</div>
               <div class="catering-type__text">
                 <h4>Private Events</h4>
-                <p>Graduation parties, reunions, weddings — we handle the food so you enjoy the moment.</p>
+                <p>Graduation parties, reunions, baby showers — homemade pies and cakes made to order, or a full breakfast/lunch spread on-site.</p>
+              </div>
+            </div>
+            <div class="catering-type">
+              <div class="catering-type__icon">🥧</div>
+              <div class="catering-type__text">
+                <h4>Custom Bakery Orders</h4>
+                <p>Birthday cakes, event pies, bread for your shop or restaurant — pre-orders welcome with 48+ hrs notice.</p>
               </div>
             </div>
             <div class="catering-type">
               <div class="catering-type__icon">🎪</div>
               <div class="catering-type__text">
                 <h4>Festivals & Markets</h4>
-                <p>Booking regional festivals and farmers markets year-round. Inquire for availability.</p>
+                <p>Booking regional events year-round. Inquire for availability and pricing.</p>
               </div>
             </div>
           </div>
-          <p style="font-size: 13px; color: var(--iron-light);">Events typically start at $500 depending on guest count and menu. We travel within 75 miles of Pittsburg, KS.</p>
+          <p style="font-size: 13px; color: var(--iron-light);">We travel within 75 miles of Pittsburg, KS. Events start at $400 depending on guest count and menu selection.</p>
         </div>
-
-        <!-- Right: Booking form -->
         <div class="catering-form-wrap">
           <h3>Request a Booking</h3>
           <div id="cateringForm">
@@ -1266,29 +497,29 @@
                 <label for="cGuests">Guests</label>
                 <select id="cGuests">
                   <option value="">Approx. count</option>
+                  <option>Under 25</option>
                   <option>25–50</option>
                   <option>50–100</option>
-                  <option>100–200</option>
-                  <option>200+</option>
+                  <option>100+</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
-              <label for="cType">Event Type</label>
+              <label for="cType">What are you looking for?</label>
               <select id="cType">
                 <option value="">Select type</option>
-                <option>Corporate Lunch</option>
+                <option>Corporate Breakfast / Lunch</option>
                 <option>Private Party</option>
-                <option>Wedding / Reception</option>
+                <option>Custom Bakery Order</option>
                 <option>Festival / Market</option>
                 <option>Other</option>
               </select>
             </div>
             <div class="form-group">
               <label for="cNotes">Notes / Location</label>
-              <textarea id="cNotes" placeholder="Tell us about your event and where it's located..."></textarea>
+              <textarea id="cNotes" placeholder="Tell us about your event, what you're craving, and where it's located..."></textarea>
             </div>
-            <button class="btn btn--ember btn--full" onclick="handleCateringSubmit()">Send Catering Request</button>
+            <button class="btn btn--ember btn--full" onclick="handleCateringSubmit()">Send Request</button>
           </div>
           <div class="form-success" id="cateringSuccess">
             <span class="success-icon">◆</span>
@@ -1300,90 +531,23 @@
     </div>
   </section>
 
-  <!-- ==============================
-       ABOUT
-  ============================== -->
+  <!-- ABOUT -->
   <section class="section about-section" id="about">
     <div class="section__inner">
       <div class="about-grid">
-        <!-- Mining heritage SVG illustration -->
-        <div class="about-visual">
-          <svg class="about-art" viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
-            <!-- Mine shaft entrance -->
-            <rect x="120" y="160" width="160" height="180" rx="2" fill="#1a1a1a" stroke="#333" stroke-width="2"/>
-            <!-- Arch above mine -->
-            <path d="M120 160 Q200 80 280 160" fill="#252525" stroke="#C0392B" stroke-width="2.5"/>
-            <!-- Crossbeams in arch -->
-            <line x1="145" y1="145" x2="255" y2="145" stroke="#333" stroke-width="3"/>
-            <line x1="130" y1="170" x2="270" y2="170" stroke="#4a4a4a" stroke-width="2"/>
-            <!-- Mine interior darkness -->
-            <rect x="130" y="170" width="140" height="170" rx="1" fill="#0a0a0a"/>
-            <!-- Mine cart on tracks -->
-            <rect x="150" y="290" width="100" height="40" rx="2" fill="#2a2a2a" stroke="#C0392B" stroke-width="1.5"/>
-            <!-- Cart contents - coal or food -->
-            <ellipse cx="200" cy="290" rx="45" ry="12" fill="#C0392B" opacity="0.8"/>
-            <!-- Small food items in cart -->
-            <circle cx="185" cy="284" r="5" fill="#D4A017"/>
-            <circle cx="200" cy="281" r="6" fill="#8B4513"/>
-            <circle cx="215" cy="284" r="5" fill="#D4A017"/>
-            <!-- Cart wheels -->
-            <circle cx="165" cy="330" r="8" fill="#333" stroke="#888" stroke-width="1.5"/>
-            <circle cx="235" cy="330" r="8" fill="#333" stroke="#888" stroke-width="1.5"/>
-            <!-- Track rails -->
-            <line x1="100" y1="338" x2="300" y2="338" stroke="#4a4a4a" stroke-width="3"/>
-            <line x1="100" y1="334" x2="300" y2="334" stroke="#333" stroke-width="2"/>
-            <!-- Track ties -->
-            <line x1="110" y1="332" x2="110" y2="342" stroke="#4a4a4a" stroke-width="4"/>
-            <line x1="140" y1="332" x2="140" y2="342" stroke="#4a4a4a" stroke-width="4"/>
-            <line x1="170" y1="332" x2="170" y2="342" stroke="#4a4a4a" stroke-width="4"/>
-            <line x1="200" y1="332" x2="200" y2="342" stroke="#4a4a4a" stroke-width="4"/>
-            <line x1="230" y1="332" x2="230" y2="342" stroke="#4a4a4a" stroke-width="4"/>
-            <line x1="260" y1="332" x2="260" y2="342" stroke="#4a4a4a" stroke-width="4"/>
-            <line x1="290" y1="332" x2="290" y2="342" stroke="#4a4a4a" stroke-width="4"/>
-            <!-- Headframe / mine tipple tower -->
-            <line x1="200" y1="160" x2="200" y2="30" stroke="#4a4a4a" stroke-width="4"/>
-            <line x1="175" y1="80" x2="200" y2="30" stroke="#4a4a4a" stroke-width="3"/>
-            <line x1="225" y1="80" x2="200" y2="30" stroke="#4a4a4a" stroke-width="3"/>
-            <line x1="175" y1="80" x2="225" y2="80" stroke="#4a4a4a" stroke-width="3"/>
-            <line x1="160" y1="130" x2="240" y2="130" stroke="#333" stroke-width="2"/>
-            <line x1="165" y1="105" x2="235" y2="105" stroke="#333" stroke-width="2"/>
-            <!-- Pulley wheel at top -->
-            <circle cx="200" cy="32" r="12" fill="#252525" stroke="#C0392B" stroke-width="2"/>
-            <circle cx="200" cy="32" r="5" fill="#C0392B"/>
-            <!-- Rope/cable from pulley -->
-            <line x1="200" y1="44" x2="200" y2="160" stroke="#333" stroke-width="1.5" stroke-dasharray="4,4"/>
-            <!-- Lantern hanging in mine entrance -->
-            <rect x="192" y="185" width="16" height="20" rx="2" fill="#D4A017" opacity="0.9"/>
-            <line x1="200" y1="178" x2="200" y2="185" stroke="#888" stroke-width="1.5"/>
-            <!-- Lantern glow -->
-            <ellipse cx="200" cy="195" rx="24" ry="20" fill="#D4A017" opacity="0.08"/>
-            <!-- Pickaxe tools leaning against mine -->
-            <line x1="285" y1="340" x2="310" y2="180" stroke="#4a4a4a" stroke-width="3" stroke-linecap="round"/>
-            <path d="M310 180 L325 165 L315 175 L328 168 L316 178" fill="none" stroke="#888" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="88" y1="340" x2="75" y2="210" stroke="#4a4a4a" stroke-width="3" stroke-linecap="round"/>
-            <path d="M75 210 L60 195 L70 205 L57 198 L69 208" fill="none" stroke="#888" stroke-width="2.5" stroke-linecap="round"/>
-            <!-- Smoke / steam from mine cart food -->
-            <path d="M185 275 Q182 265 186 255 Q190 245 186 235" fill="none" stroke="#C0392B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-            <path d="M200 272 Q197 260 201 250 Q205 240 201 230" fill="none" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-            <path d="M215 275 Q218 263 214 253 Q210 243 214 233" fill="none" stroke="#C0392B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-            <!-- Ground terrain -->
-            <path d="M40 355 Q80 340 120 348 Q160 355 200 345 Q240 335 280 348 Q320 355 360 342" fill="none" stroke="#333" stroke-width="2" opacity="0.6"/>
-            <!-- Text label -->
-            <text x="200" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="0" fill="none">Mine entrance</text>
-          </svg>
+        <div class="about-logo-wrap">
+          <img src="images/logo-round.png" alt="Iron & Embers — The Heat of the Mine. The Heart of the Town." class="about-logo" />
         </div>
-
-        <!-- About text -->
         <div class="about-text">
           <p class="eyebrow">Our Story</p>
-          <h2 class="section__headline">Forged from<br/><em>Coal Country.</em></h2>
-          <p>Southeast Kansas didn't just mine coal — it built communities around it. Iron & Embers is our way of carrying that spirit forward: hard-working, fire-forged food rolling through the towns the miners built.</p>
-          <p>Before the restaurant opens its doors, the truck rolls first. Same flavors, same mining-heritage soul — just smaller, faster, and ready to find you wherever you are in Crawford County and beyond.</p>
-          <p>Everything is cooked over real hardwood. Nothing is corporate. Every dish name comes from the mine.</p>
+          <h2>Forged from<br/><em>Coal Country.</em></h2>
+          <p>Southeast Kansas didn't just mine coal — it built communities around it. The bakers who fed the miners. The cooks who kept the crews going. Iron & Embers carries that tradition forward.</p>
+          <p>Before the restaurant opens its doors, the truck rolls first. Homemade breads baked fresh every morning, breakfast made to order, and lunch worth driving across Crawford County for.</p>
+          <p>Every dish name comes from the mine. Every loaf is made from scratch. Nothing here comes from a bag or a box.</p>
           <div class="about-stats">
             <div>
               <span class="about-stat__num">100%</span>
-              <span class="about-stat__label">Hardwood Smoked</span>
+              <span class="about-stat__label">From Scratch</span>
             </div>
             <div>
               <span class="about-stat__num">75mi</span>
@@ -1399,67 +563,69 @@
     </div>
   </section>
 
-  <!-- SOCIAL SECTION -->
+  <!-- SOCIAL -->
   <section class="social-section">
     <h2>Follow the <em>Truck</em></h2>
-    <p>Real-time location drops, daily specials, and behind-the-window action.</p>
+    <p>Real-time location drops, daily specials, and fresh-out-of-the-oven moments.</p>
     <div class="social-links">
-      <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link">
-        <span class="social-link-icon">📸</span> Instagram
-      </a>
-      <a href="https://facebook.com" target="_blank" rel="noopener" class="social-link">
-        <span class="social-link-icon">👍</span> Facebook
-      </a>
-      <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-link">
-        <span class="social-link-icon">🎵</span> TikTok
-      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link">📸 Instagram</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" class="social-link">👍 Facebook</a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-link">🎵 TikTok</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__inner">
-      <div>
-        <div class="footer__brand-name">Iron <span class="amp">&</span> Embers</div>
-        <div class="footer__brand-sub">Food Truck · Southeast Kansas</div>
-        <p class="footer__tagline">"The Heat of the Mine. On Wheels."</p>
+      <!-- Brand row -->
+      <div class="footer__brand">
+        <img src="images/logo-round.png" alt="Iron & Embers" class="footer__brand-logo" />
+        <div class="footer__brand-text">
+          <div class="footer__brand-name">Iron <span class="amp">&</span> Embers</div>
+          <div class="footer__brand-tagline">"The Heat of the Mine. On Wheels." · Southeast Kansas</div>
+        </div>
       </div>
-      <div class="footer__col">
-        <h5>Quick Links</h5>
-        <a href="#location">Find Us Today</a>
-        <a href="#menu">Menu</a>
-        <a href="#order">Order Ahead</a>
-        <a href="#catering">Catering</a>
-        <a href="#about">Our Story</a>
-      </div>
-      <div class="footer__col">
-        <h5>Connect</h5>
-        <a href="https://streetfoodfinder.com/" target="_blank" rel="noopener">StreetFoodFinder</a>
-        <a href="https://gotruckster.com/" target="_blank" rel="noopener">Truckster</a>
-        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+      <!-- Horizontal link columns -->
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h5>Navigate</h5>
+          <a href="#location">Find Us Today</a>
+          <a href="#menu">Menu</a>
+          <a href="#order">Order Ahead</a>
+          <a href="#catering">Catering & Events</a>
+          <a href="#about">Our Story</a>
+        </div>
+        <div class="footer__col">
+          <h5>Track the Truck</h5>
+          <a href="https://streetfoodfinder.com/" target="_blank" rel="noopener">StreetFoodFinder</a>
+          <a href="https://gotruckster.com/" target="_blank" rel="noopener">Truckster</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
+        </div>
+        <div class="footer__col">
+          <h5>Hours</h5>
+          <span>Wed – Fri · 7am – 2pm</span>
+          <span>Saturday · 7am – 3pm</span>
+          <span>Sun – Tue · Closed</span>
+          <span style="margin-top: 10px; color: rgba(245,240,232,0.3); font-size: 12px;">Schedule varies — follow us for live updates</span>
+        </div>
       </div>
     </div>
     <div class="footer__bottom">
-      © Iron & Embers Food Truck, LLC · Pittsburg, KS · Est. 2024 · Built for Crawford County
+      © Iron & Embers, LLC · Pittsburg, KS · Built for Crawford County & the Four-State Region
     </div>
   </footer>
 
-  <!-- ORDER SYSTEM STUB — see js/order-system-stub.js for integration notes -->
   <script src="js/order-system-stub.js" defer></script>
   <script>
-    /* ==========================================
-       IRON & EMBERS FOOD TRUCK — MAIN JS
-    ========================================== */
-
-    // --- Nav toggle (mobile) ---
+    // Nav toggle
     const toggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     toggle.addEventListener('click', () => {
       toggle.classList.toggle('open');
       navLinks.classList.toggle('open');
     });
-    // Close nav on link click (mobile)
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         toggle.classList.remove('open');
@@ -1467,38 +633,30 @@
       });
     });
 
-    // --- Menu tabs ---
+    // Menu tabs
     document.querySelectorAll('.menu-tab').forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
         document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
         tab.classList.add('active');
-        const panelId = 'tab-' + tab.dataset.tab;
-        const panel = document.getElementById(panelId);
+        const panel = document.getElementById('tab-' + tab.dataset.tab);
         if (panel) panel.classList.add('active');
       });
     });
 
-    // --- Ember particles ---
+    // Ember particles
     const container = document.getElementById('particles');
     function makeParticle() {
       const p = document.createElement('div');
       p.classList.add('particle');
       const size = Math.random() * 4 + 2;
-      p.style.cssText = `
-        width: ${size}px; height: ${size}px;
-        left: ${Math.random() * 100}%;
-        bottom: ${Math.random() * 20}%;
-        animation-duration: ${Math.random() * 5 + 4}s;
-        animation-delay: ${Math.random() * 6}s;
-        opacity: 0;
-      `;
+      p.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;bottom:${Math.random()*20}%;animation-duration:${Math.random()*5+4}s;animation-delay:${Math.random()*6}s;opacity:0;`;
       container.appendChild(p);
       setTimeout(() => p.remove(), 11000);
     }
     setInterval(makeParticle, 600);
 
-    // --- Order ahead notify form ---
+    // Notify signup
     function handleNotifySignup() {
       const email = document.getElementById('notifyEmail').value.trim();
       const msg = document.getElementById('notifyMsg');
@@ -1507,21 +665,18 @@
         msg.textContent = 'Please enter a valid email address.';
         return;
       }
-      // TODO: POST to /api/notify-signup when backend is ready
+      // TODO: POST to /api/notify-signup
       msg.style.color = '#D4A017';
       msg.textContent = "✓ You're on the list! We'll let you know when ordering goes live.";
       document.getElementById('notifyEmail').value = '';
     }
 
-    // --- Catering form ---
+    // Catering form
     function handleCateringSubmit() {
       const name = document.getElementById('cName').value.trim();
       const email = document.getElementById('cEmail').value.trim();
-      if (!name || !email) {
-        alert('Please fill in your name and email.');
-        return;
-      }
-      // TODO: POST form data to backend / Formspree / Netlify Forms
+      if (!name || !email) { alert('Please fill in your name and email.'); return; }
+      // TODO: POST to backend / Formspree / Netlify Forms
       document.getElementById('cateringForm').style.display = 'none';
       document.getElementById('cateringSuccess').style.display = 'block';
     }
